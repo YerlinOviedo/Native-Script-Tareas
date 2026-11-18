@@ -9,3 +9,82 @@
   background-color: #1d4ed8;
   color: #ffffff;
 }
+
+/* ---------- Pantalla de listado ---------- */
+
+.resumen {
+  font-size: 15;
+  color: #475569;
+  padding: 14 16 6 16;
+}
+
+.lista {
+  background-color: transparent;
+}
+
+.fila {
+  padding: 6 16;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border-radius: 12;
+  border-width: 1;
+  border-color: #e2e8f0;
+  padding: 12;
+}
+
+.check {
+  width: 28;
+  height: 28;
+  border-radius: 14;
+  border-width: 2;
+  border-color: #94a3b8;
+  color: #ffffff;
+  font-size: 15;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  margin: 2 12 0 0;
+  padding: 2 0 0 0;
+}
+
+.check-hecho {
+  background-color: #16a34a;
+  border-color: #16a34a;
+}
+
+.titulo {
+  font-size: 17;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.titulo-hecho {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.detalle {
+  font-size: 13;
+  color: #64748b;
+  margin-top: 2;
+}
+
+.prioridad {
+  font-size: 12;
+  font-weight: bold;
+  margin-top: 6;
+}
+
+.prioridad-Baja {
+  color: #15803d;
+}
+
+.prioridad-Media {
+  color: #b45309;
+}
+
+.prioridad-Alta {
+  color: #b91c1c;
+}

@@ -1,9 +1,37 @@
-<!-- PANTALLA 1: listado de tareas (en construcción). -->
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" class="pagina">
+<!-- PANTALLA 1: listado de tareas.
+     navigatingTo llama a la función onNavigatingTo de lista-page.ts -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="pagina">
 
     <ActionBar title="Mis tareas" class="barra" />
 
-    <StackLayout>
-        <Label text="Aquí se mostrará el listado de tareas." textWrap="true" class="resumen" />
-    </StackLayout>
+    <!-- GridLayout con 2 filas: resumen (auto) y lista (ocupa el resto) -->
+    <GridLayout rows="auto, *">
+
+        <!-- {{ resumen }} se enlaza con la propiedad "resumen" del view model -->
+        <Label row="0" text="{{ resumen }}" class="resumen" textWrap="true" />
+
+        <!-- LISTADO DINÁMICO: dibuja una fila por cada elemento de "tareas" -->
+        <ListView row="1" items="{{ tareas }}" itemTap="onTareaTap" separatorColor="transparent" class="lista">
+            <ListView.itemTemplate>
+                <GridLayout class="fila">
+                    <GridLayout columns="auto, *, auto" class="tarjeta">
+
+                        <Label col="0" text="{{ completada ? '✓' : '' }}"
+                               class="{{ completada ? 'check check-hecho' : 'check' }}" />
+
+                        <StackLayout col="1" class="tarjeta-texto">
+                            <Label text="{{ titulo }}" textWrap="true"
+                                   class="{{ completada ? 'titulo titulo-hecho' : 'titulo' }}" />
+                            <Label text="{{ 'Responsable: ' + responsable }}" class="detalle" />
+                            <Label text="{{ descripcion }}" textWrap="true" class="detalle"
+                                   visibility="{{ descripcion ? 'visible' : 'collapsed' }}" />
+                            <Label text="{{ 'Prioridad ' + prioridad }}"
+                                   class="{{ 'prioridad prioridad-' + prioridad }}" />
+                        </StackLayout>
+
+                    </GridLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
 </Page>
