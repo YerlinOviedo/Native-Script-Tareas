@@ -1,0 +1,9 @@
+<!-- PANTALLA 1: listado de tareas (en construcción). -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" class="pagina">
+
+    <ActionBar title="Mis tareas" class="barra" />
+
+    <StackLayout>
+        <Label text="Aquí se mostrará el listado de tareas." textWrap="true" class="resumen" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,11 @@
+﻿/* ESTILOS de toda la app. NativeScript usa CSS parecido al de la web,
+   pero se aplica a componentes nativos (no a HTML). */
+
+.pagina {
+  background-color: #f1f5f9;
+}
+
+.barra {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}

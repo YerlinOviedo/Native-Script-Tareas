@@ -1,0 +1,3 @@
+<!-- Vista raíz: un Frame es el contenedor que permite navegar entre páginas.
+     defaultPage es la primera pantalla que se muestra. -->
+<Frame defaultPage="lista/lista-page" />
