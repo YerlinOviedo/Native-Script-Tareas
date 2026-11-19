@@ -1,0 +1,60 @@
+<!-- PANTALLA 3 (broma para la exposición): planes de "Calendario Plus". -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="pagina">
+
+    <ActionBar title="Calendario Plus" class="barra" />
+
+    <ScrollView>
+        <StackLayout class="formulario">
+
+            <Label text="Elija su plan" class="plus-titulo" />
+
+            <!-- Tres planes. Al tocar uno se marca como seleccionado. -->
+            <StackLayout id="plan0" tap="onPlanTap"
+                         class="{{ planIndex === 0 ? 'plan plan-activo' : 'plan' }}">
+                <Label text="{{ plan0.nombre }}" class="plan-nombre" />
+                <Label text="{{ plan0.precio }}" class="plan-precio" />
+                <Label text="{{ plan0.detalle }}" class="detalle" textWrap="true" />
+            </StackLayout>
+
+            <StackLayout id="plan1" tap="onPlanTap"
+                         class="{{ planIndex === 1 ? 'plan plan-activo' : 'plan' }}">
+                <Label text="{{ plan1.nombre }}" class="plan-nombre" />
+                <Label text="{{ plan1.precio }}" class="plan-precio" />
+                <Label text="{{ plan1.detalle }}" class="detalle" textWrap="true" />
+            </StackLayout>
+
+            <StackLayout id="plan2" tap="onPlanTap"
+                         class="{{ planIndex === 2 ? 'plan plan-activo' : 'plan' }}">
+                <Label text="{{ plan2.nombre }}" class="plan-nombre" />
+                <Label text="{{ plan2.precio }}" class="plan-precio" />
+                <Label text="{{ plan2.detalle }}" class="detalle" textWrap="true" />
+            </StackLayout>
+
+            <!-- Datos de la tarjeta -->
+            <Label text="Número de tarjeta" class="etiqueta" />
+            <TextField text="{{ numeroTarjeta }}" hint="0000 0000 0000 0000"
+                       keyboardType="number" maxLength="19" class="campo" />
+
+            <GridLayout columns="*, 12, *">
+                <StackLayout col="0">
+                    <Label text="Vencimiento" class="etiqueta" />
+                    <TextField text="{{ vencimiento }}" hint="MM/AA" maxLength="5" class="campo" />
+                </StackLayout>
+                <StackLayout col="2">
+                    <Label text="CVV" class="etiqueta" />
+                    <TextField text="{{ cvv }}" hint="123" keyboardType="number"
+                               secure="true" maxLength="4" class="campo" />
+                </StackLayout>
+            </GridLayout>
+
+            <Label text="Nombre del titular" class="etiqueta" />
+            <TextField text="{{ titular }}" hint="Como aparece en la tarjeta" class="campo" />
+
+            <Button text="{{ textoBoton }}" tap="onPagarTap" class="boton boton-plus" />
+            <Button text="Mejor no, gracias" tap="onVolverTap" class="boton boton-secundario" />
+
+            <Label text="* Es una broma: no escriba una tarjeta real. No se cobra, no se guarda y no se envía nada."
+                   class="plus-nota" textWrap="true" />
+        </StackLayout>
+    </ScrollView>
+</Page>
