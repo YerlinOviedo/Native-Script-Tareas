@@ -1,9 +1,44 @@
-<!-- PANTALLA 1: listado de tareas (en construcción). -->
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" class="pagina">
+<!-- PANTALLA 1: listado de tareas.
+     navigatingTo llama a la función onNavigatingTo de lista-page.ts -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="pagina">
 
     <ActionBar title="Mis tareas" class="barra" />
 
-    <StackLayout>
-        <Label text="Aquí se mostrará el listado de tareas." textWrap="true" class="resumen" />
-    </StackLayout>
+    <!-- GridLayout con 3 filas: resumen (auto), lista (ocupa el resto), botón (auto) -->
+    <GridLayout rows="auto, *, auto, auto">
+
+        <!-- {{ resumen }} se enlaza con la propiedad "resumen" del view model -->
+        <Label row="0" text="{{ resumen }}" class="resumen" textWrap="true" />
+
+        <!-- LISTADO DINÁMICO: dibuja una fila por cada elemento de "tareas" -->
+        <ListView row="1" items="{{ tareas }}" itemTap="onTareaTap" separatorColor="transparent" class="lista">
+            <ListView.itemTemplate>
+                <GridLayout class="fila">
+                    <GridLayout columns="auto, *, auto" class="tarjeta">
+
+                        <Label col="0" text="{{ completada ? '✓' : '' }}"
+                               class="{{ completada ? 'check check-hecho' : 'check' }}" />
+
+                        <StackLayout col="1" class="tarjeta-texto">
+                            <Label text="{{ titulo }}" textWrap="true"
+                                   class="{{ completada ? 'titulo titulo-hecho' : 'titulo' }}" />
+                            <Label text="{{ 'Responsable: ' + responsable }}" class="detalle" />
+                            <Label text="{{ descripcion }}" textWrap="true" class="detalle"
+                                   visibility="{{ descripcion ? 'visible' : 'collapsed' }}" />
+                            <Label text="{{ 'Prioridad ' + prioridad }}"
+                                   class="{{ 'prioridad prioridad-' + prioridad }}" />
+                        </StackLayout>
+
+                        <Label col="2" text="✕" class="eliminar" tap="onEliminarTap" />
+                    </GridLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- NAVEGACIÓN: este botón abre la pantalla del formulario -->
+        <Button row="2" text="+ Nueva tarea" tap="onNuevaTareaTap" class="boton boton-principal" />
+
+        <!-- BROMA para la exposición: abre la pantalla de planes de pago -->
+        <Button row="3" text="Mejorar a Calendario Plus" tap="onMejorarTap" class="boton boton-plus" />
+    </GridLayout>
 </Page>

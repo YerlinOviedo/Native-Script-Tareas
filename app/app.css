@@ -9,3 +9,216 @@
   background-color: #1d4ed8;
   color: #ffffff;
 }
+
+/* ---------- Pantalla de listado ---------- */
+
+.resumen {
+  font-size: 15;
+  color: #475569;
+  padding: 14 16 6 16;
+}
+
+.lista {
+  background-color: transparent;
+}
+
+.fila {
+  padding: 6 16;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border-radius: 12;
+  border-width: 1;
+  border-color: #e2e8f0;
+  padding: 12;
+}
+
+.check {
+  width: 28;
+  height: 28;
+  border-radius: 14;
+  border-width: 2;
+  border-color: #94a3b8;
+  color: #ffffff;
+  font-size: 15;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  margin: 2 12 0 0;
+  padding: 2 0 0 0;
+}
+
+.check-hecho {
+  background-color: #16a34a;
+  border-color: #16a34a;
+}
+
+.titulo {
+  font-size: 17;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.titulo-hecho {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.detalle {
+  font-size: 13;
+  color: #64748b;
+  margin-top: 2;
+}
+
+.prioridad {
+  font-size: 12;
+  font-weight: bold;
+  margin-top: 6;
+}
+
+.prioridad-Baja {
+  color: #15803d;
+}
+
+.prioridad-Media {
+  color: #b45309;
+}
+
+.prioridad-Alta {
+  color: #b91c1c;
+}
+
+.eliminar {
+  font-size: 18;
+  color: #94a3b8;
+  padding: 4 4 4 12;
+  vertical-align: top;
+}
+
+/* ---------- Pantalla del formulario ---------- */
+
+.formulario {
+  padding: 16;
+}
+
+.etiqueta {
+  font-size: 14;
+  font-weight: bold;
+  color: #334155;
+  margin-top: 12;
+  margin-bottom: 4;
+}
+
+.campo {
+  font-size: 16;
+  color: #0f172a;
+  placeholder-color: #94a3b8;
+  background-color: #ffffff;
+  border-width: 1;
+  border-color: #cbd5e1;
+  border-radius: 8;
+  padding: 12;
+}
+
+.campo-alto {
+  height: 96;
+}
+
+.campo-error {
+  border-color: #dc2626;
+  border-width: 2;
+}
+
+.error {
+  font-size: 13;
+  color: #dc2626;
+  margin-top: 4;
+}
+
+.selector {
+  margin-top: 2;
+  background-color: #e2e8f0;
+  color: #334155;
+  selected-background-color: #1d4ed8;
+  selected-text-color: #ffffff;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  font-size: 16;
+  font-weight: bold;
+  text-transform: none;
+  height: 52;
+  border-radius: 10;
+}
+
+.boton-principal {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  margin: 12 16 10 16;
+}
+
+.formulario .boton-principal {
+  margin: 24 0 0 0;
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: #1d4ed8;
+  margin: 8 0 0 0;
+}
+
+/* ---------- Calendario Plus (broma para la exposición) ---------- */
+
+.boton-plus {
+  background-color: #f59e0b;
+  color: #1f2937;
+  margin: 0 16 16 16;
+}
+
+.formulario .boton-plus {
+  margin: 24 0 0 0;
+}
+
+.plus-titulo {
+  font-size: 20;
+  font-weight: bold;
+  color: #0f172a;
+  margin-bottom: 8;
+}
+
+.plan {
+  background-color: #ffffff;
+  border-radius: 12;
+  border-width: 1;
+  border-color: #e2e8f0;
+  padding: 12;
+  margin-bottom: 10;
+}
+
+.plan-activo {
+  border-width: 3;
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+}
+
+.plan-nombre {
+  font-size: 16;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.plan-precio {
+  font-size: 20;
+  font-weight: bold;
+  color: #b45309;
+  margin-top: 2;
+}
+
+.plus-nota {
+  font-size: 12;
+  color: #64748b;
+  margin-top: 16;
+}
