@@ -4,8 +4,8 @@
 
     <ActionBar title="Mis tareas" class="barra" />
 
-    <!-- GridLayout con 2 filas: resumen (auto) y lista (ocupa el resto) -->
-    <GridLayout rows="auto, *">
+    <!-- GridLayout con 3 filas: resumen (auto), lista (ocupa el resto), botón (auto) -->
+    <GridLayout rows="auto, *, auto">
 
         <!-- {{ resumen }} se enlaza con la propiedad "resumen" del view model -->
         <Label row="0" text="{{ resumen }}" class="resumen" textWrap="true" />
@@ -33,5 +33,8 @@
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView>
+
+        <!-- NAVEGACIÓN: este botón abre la pantalla del formulario -->
+        <Button row="2" text="+ Nueva tarea" tap="onNuevaTareaTap" class="boton boton-principal" />
     </GridLayout>
 </Page>
