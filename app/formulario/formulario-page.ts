@@ -1,6 +1,7 @@
 // Código de la pantalla del formulario (code-behind de formulario-page.xml).
 import { EventData, NavigatedData, Page, View } from '@nativescript/core'
 import { TareaService } from '../datos/tarea-service'
+import { mostrarMensaje } from '../utilidades/mensaje'
 import { FormularioViewModel } from './formulario-view-model'
 
 // Cada vez que se abre el formulario se crea un view model nuevo (campos vacíos).
@@ -22,7 +23,8 @@ export function onGuardarTap(args: EventData): void {
   // 2. Guardar la tarea en el servicio de datos.
   TareaService.agregar(formulario.obtenerDatos())
 
-  // 3. Regreso a la lista.
+  // 3. Respuesta visual y regreso a la lista.
+  mostrarMensaje('Tarea guardada')
   boton.page.frame.goBack()
 }
 
