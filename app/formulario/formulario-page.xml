@@ -1,0 +1,45 @@
+<!-- PANTALLA 2: formulario para agregar una tarea. -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="pagina">
+
+    <ActionBar title="Nueva tarea" class="barra" />
+
+    <!-- ScrollView permite desplazarse si el teclado tapa los campos -->
+    <ScrollView>
+        <StackLayout class="formulario">
+
+            <!-- CAMPO 1: título (obligatorio, mínimo 3 letras) -->
+            <Label text="Título *" class="etiqueta" />
+            <TextField text="{{ titulo }}" hint="Ej: Estudiar para el examen"
+                       class="{{ errorTitulo ? 'campo campo-error' : 'campo' }}" />
+            <Label text="{{ errorTitulo }}" class="error"
+                   visibility="{{ errorTitulo ? 'visible' : 'collapsed' }}" />
+
+            <!-- CAMPO 2: responsable (obligatorio) -->
+            <Label text="Responsable *" class="etiqueta" />
+            <TextField text="{{ responsable }}" hint="Ej: María"
+                       class="{{ errorResponsable ? 'campo campo-error' : 'campo' }}" />
+            <Label text="{{ errorResponsable }}" class="error"
+                   visibility="{{ errorResponsable ? 'visible' : 'collapsed' }}" />
+
+            <!-- CAMPO 3: descripción (opcional, máximo 80 caracteres) -->
+            <Label text="Descripción" class="etiqueta" />
+            <TextView text="{{ descripcion }}" hint="Detalle de la tarea (opcional)"
+                      class="{{ errorDescripcion ? 'campo campo-alto campo-error' : 'campo campo-alto' }}" />
+            <Label text="{{ errorDescripcion }}" class="error"
+                   visibility="{{ errorDescripcion ? 'visible' : 'collapsed' }}" />
+
+            <!-- CAMPO 4: prioridad (selector de 3 opciones) -->
+            <Label text="Prioridad" class="etiqueta" />
+            <SegmentedBar selectedIndex="{{ prioridadIndex }}" class="selector">
+                <SegmentedBar.items>
+                    <SegmentedBarItem title="Baja" />
+                    <SegmentedBarItem title="Media" />
+                    <SegmentedBarItem title="Alta" />
+                </SegmentedBar.items>
+            </SegmentedBar>
+
+            <Button text="Guardar tarea" tap="onGuardarTap" class="boton boton-principal" />
+            <Button text="Cancelar" tap="onCancelarTap" class="boton boton-secundario" />
+        </StackLayout>
+    </ScrollView>
+</Page>

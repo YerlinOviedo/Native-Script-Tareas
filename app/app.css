@@ -88,3 +88,77 @@
 .prioridad-Alta {
   color: #b91c1c;
 }
+
+/* ---------- Pantalla del formulario ---------- */
+
+.formulario {
+  padding: 16;
+}
+
+.etiqueta {
+  font-size: 14;
+  font-weight: bold;
+  color: #334155;
+  margin-top: 12;
+  margin-bottom: 4;
+}
+
+.campo {
+  font-size: 16;
+  color: #0f172a;
+  placeholder-color: #94a3b8;
+  background-color: #ffffff;
+  border-width: 1;
+  border-color: #cbd5e1;
+  border-radius: 8;
+  padding: 12;
+}
+
+.campo-alto {
+  height: 96;
+}
+
+.campo-error {
+  border-color: #dc2626;
+  border-width: 2;
+}
+
+.error {
+  font-size: 13;
+  color: #dc2626;
+  margin-top: 4;
+}
+
+.selector {
+  margin-top: 2;
+  background-color: #e2e8f0;
+  color: #334155;
+  selected-background-color: #1d4ed8;
+  selected-text-color: #ffffff;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  font-size: 16;
+  font-weight: bold;
+  text-transform: none;
+  height: 52;
+  border-radius: 10;
+}
+
+.boton-principal {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  margin: 12 16 16 16;
+}
+
+.formulario .boton-principal {
+  margin: 24 0 0 0;
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: #1d4ed8;
+  margin: 8 0 0 0;
+}
