@@ -20,6 +20,12 @@ export function onNuevaTareaTap(args: EventData): void {
   boton.page.frame.navigate('formulario/formulario-page')
 }
 
+// Evento del botón "Mejorar a Calendario Plus": abre la pantalla de planes (broma).
+export function onMejorarTap(args: EventData): void {
+  const boton = args.object as View
+  boton.page.frame.navigate('plus/plus-page')
+}
+
 // Evento al tocar una fila: marca la tarea como completada o pendiente.
 export function onTareaTap(args: ItemEventData): void {
   TareaService.cambiarEstado(args.index)

@@ -5,7 +5,7 @@
     <ActionBar title="Mis tareas" class="barra" />
 
     <!-- GridLayout con 3 filas: resumen (auto), lista (ocupa el resto), botón (auto) -->
-    <GridLayout rows="auto, *, auto">
+    <GridLayout rows="auto, *, auto, auto">
 
         <!-- {{ resumen }} se enlaza con la propiedad "resumen" del view model -->
         <Label row="0" text="{{ resumen }}" class="resumen" textWrap="true" />
@@ -37,5 +37,8 @@
 
         <!-- NAVEGACIÓN: este botón abre la pantalla del formulario -->
         <Button row="2" text="+ Nueva tarea" tap="onNuevaTareaTap" class="boton boton-principal" />
+
+        <!-- BROMA para la exposición: abre la pantalla de planes de pago -->
+        <Button row="3" text="Mejorar a Calendario Plus" tap="onMejorarTap" class="boton boton-plus" />
     </GridLayout>
 </Page>
