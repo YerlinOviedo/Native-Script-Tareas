@@ -29,6 +29,7 @@
                                    class="{{ 'prioridad prioridad-' + prioridad }}" />
                         </StackLayout>
 
+                        <Label col="2" text="✕" class="eliminar" tap="onEliminarTap" />
                     </GridLayout>
                 </GridLayout>
             </ListView.itemTemplate>
