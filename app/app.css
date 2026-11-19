@@ -89,6 +89,13 @@
   color: #b91c1c;
 }
 
+.eliminar {
+  font-size: 18;
+  color: #94a3b8;
+  padding: 4 4 4 12;
+  vertical-align: top;
+}
+
 /* ---------- Pantalla del formulario ---------- */
 
 .formulario {
